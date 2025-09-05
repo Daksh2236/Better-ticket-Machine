@@ -1,15 +1,4 @@
-Project: better-ticket-machine
-Authors: David Barnes and Michael Kölling
-
-This project is part of the material for the book
-
-   Objects First with Java - A Practical Introduction using BlueJ
-   Seventh edition
-   David J. Barnes and Michael Kölling
-   Pearson Education
-
-It is discussed in chapter 2.
-
-Purpose of project: To illustrate conditional statements.
-How to start this project: Create one or more TicketMachine objects.
-
+47. The balance doesn't change when you you get an error message
+    My prediction was right it gives you a message saying you need to insert more money
+48. I dont think it will have any effect because it will be as if we are able to put no money
+    It doesn't make a differnce on the behavior of the method
