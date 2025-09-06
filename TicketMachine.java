@@ -110,6 +110,7 @@ public class TicketMachine
     {
         if (price>budget){
             System.out.println("Too expensive");
+            System.out.println("You're budget is " + budget);
         }
         else {
             System.out.println("Just right");
