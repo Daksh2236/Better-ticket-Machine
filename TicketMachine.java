@@ -105,4 +105,14 @@ public class TicketMachine
         balance = 0;
         return amountToRefund;
     }
+    
+    public void affordable(int budget)
+    {
+        if (price>budget){
+            System.out.println("Too expensive");
+        }
+        else {
+            System.out.println("Just right");
+        } 
+    }
 }
