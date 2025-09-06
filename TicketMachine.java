@@ -25,6 +25,7 @@ public class TicketMachine
     private int mean;
     //
     private int count;
+    
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -72,8 +73,9 @@ public class TicketMachine
      * an error message if more money is required.
      */
     public void printTicket()
-    {
-        if(balance >= price) {
+    {   int amountLeftToPay;
+        amountLeftToPay = price - balance;
+        if(amountLeftToPay <= 0) {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
@@ -89,8 +91,11 @@ public class TicketMachine
             // 
             saving = price * discount;
             //
-            mean = total / count;
+            //mean = total / count;
         
+        }
+        else {
+            System.out.println("You need to pay " + amountLeftToPay + " more cents to buy a ticket");
         }
     }
 
