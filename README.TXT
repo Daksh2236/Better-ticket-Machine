@@ -25,3 +25,8 @@
 60. When you try to compile with the version in question 59 (above) you get an error message saying undeclared variable: amountToRefund
     This version is not able to compile because the return statement because it does have a variable that it can return to
     That is why it is supposed to have amountToRefund = balance; and the variable to define the variable it would need to be int amountToRefund;
+
+61. The difference is that we added the type int infront of price
+    This version is compilable
+    When you inspect the price field you will notice that is has a value of 0 that is because by adding the int in front of price makes it a new variable
+    instead of assigning a value to the field
