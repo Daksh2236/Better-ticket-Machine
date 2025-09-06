@@ -25,7 +25,7 @@ public class TicketMachine
     private int mean;
     //
     private int count;
-    
+    private boolean ticketdiscount;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -73,30 +73,30 @@ public class TicketMachine
      * an error message if more money is required.
      */
     public void printTicket()
-    {   int amountLeftToPay;
-        amountLeftToPay = price - balance;
-        if(amountLeftToPay <= 0) {
-            // Simulate the printing of a ticket.
+    {
+        int discountPrice = price;
+        if (ticketdiscount)
+        {
+            discountPrice = price / 2;
+            ticketdiscount = false;
+        }
+        if (balance >= discountPrice)
+        {
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
+            System.out.println("# " + discountPrice + " cents.");
             System.out.println("##################");
             System.out.println();
-
-            // Update the total collected with the price.
-            total = total + price;
-            // Reduce the balance by the price.
-            balance = balance - price;
-            // 
-            saving = price * discount;
-            //
-            //mean = total / count;
-        
-        }
-        else {
-            System.out.println("You need to pay " + amountLeftToPay + " more cents to buy a ticket");
-        }
+            
+            total = total + discountPrice;
+            
+            balance = balance - discountPrice;
+          }
+          else
+          {
+            System.out.println("You need to pay " + (discountPrice - balance) + " more cents to buy a ticket");
+          }
     }
 
     /**
@@ -129,4 +129,10 @@ public class TicketMachine
        total = 0;
        return amountReset;
     }
-}
+    
+    public void discount()
+    {
+       ticketdiscount = true; 
+    }
+    }
+
