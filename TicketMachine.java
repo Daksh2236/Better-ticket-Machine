@@ -17,6 +17,14 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    // The amount of money saved
+    private int saving;
+    // The amount you get to remove from the price
+    private int discount;
+    //
+    private int mean;
+    //
+    private int count;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -78,6 +86,10 @@ public class TicketMachine
             total = total + price;
             // Reduce the balance by the price.
             balance = balance - price;
+            // 
+            saving = price * discount;
+            //
+            mean = total / count;
         
         }
     }
