@@ -30,3 +30,8 @@
     This version is compilable
     When you inspect the price field you will notice that is has a value of 0 that is because by adding the int in front of price makes it a new variable
     instead of assigning a value to the field
+
+64. The method discount needed to be added
+    The field private boolean ticketdiscount; needed to be added
+    Those are necessary for the discount to actually function
+    Not many of the existing methods would need to be changed only the printTicket method because that is where we are going to see the discount getting applied
